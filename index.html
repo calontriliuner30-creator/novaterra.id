@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novaterra | Pahlawan Lingkungan</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-leaf"></i> Novaterra
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#why-matters">Mengapa Penting</a></li>
+            <li><a href="#classification">Pilah Sampah</a></li>
+            <li><a href="#games">Permainan</a></li>
+            <li><a href="#dashboard">Statistik</a></li>
+            <li><a href="#countries">Pemimpin Dunia</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div id="particles-container"></div>
+        <div class="hero-content reveal active">
+            <h1 class="headline">Aksi Kecil, <br><span class="text-gradient">Perubahan Besar</span> untuk Bumi Kita</h1>
+            <p class="subheadline">Pelajari cara memilah sampah, menjaga alam, dan jadilah pahlawan lingkungan bersama
+                Novaterra.</p>
+            <div class="hero-buttons">
+                <a href="#classification" class="btn btn-primary glow-effect"><i class="fa-solid fa-rocket"></i> Mulai
+                    Belajar</a>
+                <a href="#games" class="btn btn-secondary glow-effect"><i class="fa-solid fa-gamepad"></i> Main Kuis</a>
+            </div>
+        </div>
+        <div class="hero-illustration reveal active delay-1">
+            <div class="mascot-container">
+                <i class="fa-solid fa-earth-americas globe-spin"></i>
+                <div class="mascot-badges">
+                    <i class="fa-solid fa-recycle float-icon icon-1"></i>
+                    <i class="fa-solid fa-seedling float-icon icon-2"></i>
+                    <i class="fa-solid fa-droplet float-icon icon-3"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Waste Matters -->
+    <section id="why-matters" class="section-padding">
+        <div class="section-header reveal">
+            <h2>Mengapa Sampah Itu Masalah</h2>
+            <p>Memahami dampak sampah yang tidak terkelola pada planet kita yang indah.</p>
+        </div>
+
+        <div class="cards-container">
+            <div class="glass-card reveal">
+                <div class="card-icon blue"><i class="fa-solid fa-water"></i></div>
+                <h3>Sampah Mencemari Sungai</h3>
+                <p>Sampah menyumbat saluran air, merusak ekosistem, dan meracuni air yang kita andalkan.</p>
+            </div>
+            <div class="glass-card reveal delay-1">
+                <div class="card-icon coral"><i class="fa-solid fa-fish-fins"></i></div>
+                <h3>Plastik Membahayakan Lautan</h3>
+                <p>Hewan laut mengira plastik adalah makanan, menyebabkan kerusakan fatal pada biota laut.</p>
+            </div>
+            <div class="glass-card reveal delay-2">
+                <div class="card-icon red"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h3>Risiko Kesehatan Manusia</h3>
+                <p>Mikroplastik dan bahan kimia beracun akhirnya masuk ke rantai makanan dan udara kita.</p>
+            </div>
+            <div class="glass-card reveal delay-3">
+                <div class="card-icon orange"><i class="fa-solid fa-temperature-arrow-up"></i></div>
+                <h3>Perubahan Iklim</h3>
+                <p>Gas metana dari tumpukan sampah secara drastis mempercepat pemanasan global.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waste Classification -->
+    <section id="classification" class="section-padding dark-mode-section">
+        <div class="section-header reveal">
+            <h2>Klasifikasi Sampah</h2>
+            <p>Tarik dan lepas sampah ke tempat yang benar untuk menyelamatkan bumi!</p>
+        </div>
+
+        <div class="dnd-container reveal">
+            <div class="items-to-sort" id="drag-items">
+                <div class="drag-item glass-card" draggable="true" data-type="organic">
+                    <i class="fa-solid fa-apple-whole"></i> <span>Sisa Apel</span>
+                </div>
+                <div class="drag-item glass-card" draggable="true" data-type="paper">
+                    <i class="fa-regular fa-newspaper"></i> <span>Koran</span>
+                </div>
+                <div class="drag-item glass-card" draggable="true" data-type="plastic">
+                    <i class="fa-solid fa-bottle-water"></i> <span>Botol Plastik</span>
+                </div>
+                <div class="drag-item glass-card" draggable="true" data-type="hazardous">
+                    <i class="fa-solid fa-battery-full"></i> <span>Baterai</span>
+                </div>
+            </div>
+
+            <div class="bins-container">
+                <div class="drop-bin green-bin glass-card" data-accept="organic">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Organik</span>
+                </div>
+                <div class="drop-bin blue-bin glass-card" data-accept="paper">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <span>Kertas</span>
+                </div>
+                <div class="drop-bin yellow-bin glass-card" data-accept="plastic">
+                    <i class="fa-solid fa-recycle"></i>
+                    <span>Plastik</span>
+                </div>
+                <div class="drop-bin red-bin glass-card" data-accept="hazardous">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>Berbahaya</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section-padding">
+        <div class="section-header reveal">
+            <h2>Permainan Ramah Lingkungan</h2>
+            <p>Uji pengetahuan dan refleksmu sambil menyelamatkan planet.</p>
+        </div>
+
+        <div class="games-wrapper">
+            <!-- Game 1: Quiz -->
+            <div class="game-board glass-card reveal" id="game-quiz">
+                <h3>Permainan 1: Tebak Sampah</h3>
+                <div class="quiz-stats">
+                    <span id="quiz-score" class="badge-pill">Skor: 0</span>
+                    <span id="quiz-timer" class="badge-pill danger">Waktu: 30d</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="quiz-progress"></div>
+                </div>
+
+                <div id="quiz-question-container">
+                    <div class="quiz-image" id="quiz-image"><i class="fa-solid fa-question"></i></div>
+                    <h4 id="quiz-question">Jenis sampah apakah ini?</h4>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <div id="quiz-result" class="hidden text-center">
+                    <i class="fa-solid fa-trophy giant-icon text-gradient"></i>
+                    <h4>Kuis Selesai!</h4>
+                    <p id="final-score" class="score-text">Kamu mendapatkan skor 0!</p>
+                    <button id="btn-restart-quiz" class="btn btn-primary glow-effect">Main Lagi</button>
+                </div>
+            </div>
+
+            <!-- Game 2: Connect Waste -->
+            <div class="game-board glass-card reveal delay-1" id="game-connect">
+                <h3>Permainan 2: Hubungkan ke Tempat Sampah</h3>
+                <p class="game-instructions">Klik item di sebelah kiri, lalu klik tempat sampah yang sesuai di sebelah
+                    kanan.</p>
+                <div class="connect-container">
+                    <svg id="connect-lines"></svg>
+                    <div class="connect-col items-col">
+                        <div class="connect-item glass-card" data-type="organic" data-id="item1"><i
+                                class="fa-solid fa-carrot"></i> Kulit Pisang</div>
+                        <div class="connect-item glass-card" data-type="plastic" data-id="item2"><i
+                                class="fa-solid fa-cup-plastic"></i> Gelas Plastik</div>
+                        <div class="connect-item glass-card" data-type="paper" data-id="item3"><i
+                                class="fa-solid fa-book"></i> Buku Bekas</div>
+                        <div class="connect-item glass-card" data-type="hazardous" data-id="item4"><i
+                                class="fa-solid fa-spray-can"></i> Bahan Kimia</div>
+                    </div>
+                    <div class="connect-col bins-col">
+                        <div class="connect-bin glass-card green" data-type="organic" data-id="bin1">Organik</div>
+                        <div class="connect-bin glass-card yellow" data-type="plastic" data-id="bin2">Plastik</div>
+                        <div class="connect-bin glass-card blue" data-type="paper" data-id="bin3">Kertas</div>
+                        <div class="connect-bin glass-card red" data-type="hazardous" data-id="bin4">Berbahaya</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indonesia Waste Emergency Dashboard -->
+    <section id="dashboard" class="section-padding dark-mode-section">
+        <div class="section-header reveal">
+            <h2>Darurat Sampah Indonesia</h2>
+            <p>Angka tidak berbohong. Kita harus bertindak sekarang.</p>
+        </div>
+
+        <div class="dashboard-grid reveal">
+            <div class="dash-card glass-card">
+                <i class="fa-solid fa-dumpster text-gradient"></i>
+                <div class="counter" data-target="6800000">0</div>
+                <p>Ton Sampah Plastik/Tahun</p>
+            </div>
+            <div class="dash-card glass-card">
+                <i class="fa-solid fa-water text-gradient"></i>
+                <div class="counter" data-target="500000">0</div>
+                <p>Ton Bocor ke Laut/Tahun</p>
+            </div>
+            <div class="dash-card glass-card">
+                <i class="fa-solid fa-recycle text-gradient"></i>
+                <div class="counter-percent" data-target="10">0</div>
+                <p>Tingkat Daur Ulang (Hanya!)</p>
+            </div>
+            <div class="dash-card glass-card">
+                <i class="fa-solid fa-mountain text-gradient"></i>
+                <div class="counter" data-target="150000000">0</div>
+                <p>Ton di Tempat Pembuangan Akhir</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cleanest Countries -->
+    <section id="countries" class="section-padding">
+        <div class="section-header reveal">
+            <h2>Negara Terbersih 2025</h2>
+            <p>Panutan untuk keunggulan lingkungan.</p>
+        </div>
+
+        <div class="countries-container">
+            <!-- Japan -->
+            <div class="country-card glass-card reveal">
+                <div class="flag-icon">🇯🇵</div>
+                <div class="badge">#1</div>
+                <h3>Jepang</h3>
+                <p>Sistem pemilahan luar biasa dengan hingga 34 kategori di beberapa kota. Warga sangat disiplin.</p>
+            </div>
+            <!-- Singapore -->
+            <div class="country-card glass-card reveal delay-1">
+                <div class="flag-icon">🇸🇬</div>
+                <div class="badge">#2</div>
+                <h3>Singapura</h3>
+                <p>Pembakaran canggih mengubah sampah menjadi listrik, hampir nol ketergantungan pada tempat pembuangan
+                    akhir.</p>
+            </div>
+            <!-- Switzerland -->
+            <div class="country-card glass-card reveal delay-2">
+                <div class="flag-icon">🇨🇭</div>
+                <div class="badge">#3</div>
+                <h3>Swiss</h3>
+                <p>Tingkat daur ulang sangat tinggi, ditegakkan dengan sistem kantong sampah berbayar yang ketat.</p>
+            </div>
+            <!-- Sweden -->
+            <div class="country-card glass-card reveal delay-3">
+                <div class="flag-icon">🇸🇪</div>
+                <div class="badge">#4</div>
+                <h3>Swedia</h3>
+                <p>Pelopor pengubahan sampah menjadi energi. Mereka bahkan mengimpor sampah untuk pembangkit pemanas.
+                </p>
+            </div>
+            <!-- Finland -->
+            <div class="country-card glass-card reveal delay-4">
+                <div class="flag-icon">🇫🇮</div>
+                <div class="badge">#5</div>
+                <h3>Finlandia</h3>
+                <p>Pemimpin dunia dalam ekonomi sirkular, dengan tingkat pengembalian botol lebih dari 90%.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Heroes -->
+    <section id="heroes" class="section-padding">
+        <div class="section-header reveal">
+            <h2>Pahlawan Lingkungan</h2>
+            <p>Dapatkan lencana ini dengan menyelesaikan misi lingkungan di dunia nyata!</p>
+        </div>
+
+        <div class="badges-container">
+            <div class="hero-badge glass-card reveal">
+                <div class="badge-icon glow-gold"><i class="fa-solid fa-medal"></i></div>
+                <h4>Pahlawan Daur Ulang</h4>
+                <p>Ahli memilah sampah</p>
+            </div>
+            <div class="hero-badge glass-card reveal delay-1">
+                <div class="badge-icon glow-silver"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>Pejuang Plastik</h4>
+                <p>Menolak plastik sekali pakai</p>
+            </div>
+            <div class="hero-badge glass-card reveal delay-2">
+                <div class="badge-icon glow-bronze"><i class="fa-solid fa-anchor"></i></div>
+                <h4>Pelindung Lautan</h4>
+                <p>Ikut serta pembersihan pantai</p>
+            </div>
+            <div class="hero-badge glass-card reveal delay-3">
+                <div class="badge-icon glow-green"><i class="fa-solid fa-seedling"></i></div>
+                <h4>Duta Hijau</h4>
+                <p>Mengedukasi teman dan keluarga</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="ocean-waves">
+            <!-- Animated SVG Waves -->
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax-waves">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#ffffff" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-leaf"></i> Novaterra
+            </div>
+            <p class="tagline">Menjaga Bumi Dimulai Dari Kebiasaan Kecil</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Novaterra. Tujuan Edukasi.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
